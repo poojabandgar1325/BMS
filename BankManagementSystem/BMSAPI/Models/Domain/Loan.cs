@@ -18,6 +18,7 @@ namespace BMSAPI.Models.Domain
         public string Status { get; set; }
         public string Comment { get; set; }
         public int AccountNo { get; set; }
+        public User User { get; set; }
 
     }
 }
