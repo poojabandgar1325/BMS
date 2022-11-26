@@ -42,6 +42,7 @@ namespace BMSAPI
             });
 
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<ILoanRepository, LoanRepository>();
 
             services.AddAutoMapper(typeof(Program).Assembly);
         }
