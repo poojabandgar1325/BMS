@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BMSWPF.Views"
         mc:Ignorable="d"
-        Title="UserRegistration"  Height="450" Width="350"
+        Title="UserRegistration"  Height="550" Width="450"
         Background="Silver">
     <Grid Margin="5,8,8,0">
         <Grid.ColumnDefinitions>
@@ -148,6 +148,15 @@
                 Padding="3"
                 Background="Green"
                 Click="btnAdd_Click"
+                />
+        <Button Name="btnShow"
+                Content="Show"
+                Grid.Row="13"
+                Grid.Column="1"
+                FontWeight="Bold" Margin="5,8,8,0"
+                Padding="3"
+                Background="SkyBlue"
+                Click="btnShow_Click"
                 />
     </Grid>
 </Window>

@@ -1,4 +1,5 @@
 ﻿using BMSWPF.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace BMSWPF.Views
 {
     /// <summary>
@@ -27,16 +29,11 @@ namespace BMSWPF.Views
         {
             InitializeComponent();
         }
+        
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("https://localhost:5001/");
-
-            client.DefaultRequestHeaders.Accept.Add(
-               new MediaTypeWithQualityHeaderValue("application/json"));
+   
             var user = new User();
-
-          //  user.Id = int.Parse(txtId.Text);
             user.Name = txtName.Text;
             user.UserName = txtUsername.Text;
             user.Password = txtPassword.Text;
@@ -49,22 +46,29 @@ namespace BMSWPF.Views
             user.DOB = DateTime.Parse(txtDOB.Text);
             user.AccountType = txtAccountType.Text;
 
-            var response = client.PostAsJsonAsync("api/Users", user).Result;
+            var json = JsonConvert.SerializeObject(user, Formatting.Indented);
 
-            if (response.IsSuccessStatusCode)
+            var stringContent = new StringContent(json);
+
+            using (HttpClient client = new HttpClient())
             {
-                MessageBox.Show("Employee Added");
-                //txtId.Text = "";
-                //txtName.Text = "";
-                //txtAddress.Text = "";
-                //txtDesignation.Text = "";
-                //BindEmployeeList();
+                var str = JsonConvert.SerializeObject(user);
+
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                
+                HttpResponseMessage rsp = client.PostAsJsonAsync("https://localhost:5001/Users/", user).Result;
+               
             }
-            else
-            {
-                MessageBox.Show("Error Code" + response.StatusCode + " : Message - " + response.ReasonPhrase);
-            }
+
+
         }
 
+        private void btnShow_Click(object sender, RoutedEventArgs e)
+        {
+            LoanData obj = new LoanData();
+
+            obj.Show();
+            //obj.Close();
+        }
     }
 }
