@@ -68,7 +68,16 @@ namespace BMSWPF.Views
             LoanData obj = new LoanData();
 
             obj.Show();
-            //obj.Close();
+           // obj.Close();
+        }
+
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            UpdateUserAccount obj = new UpdateUserAccount();
+
+            obj.Show();
+          //  obj.Close();
+            
         }
     }
 }
