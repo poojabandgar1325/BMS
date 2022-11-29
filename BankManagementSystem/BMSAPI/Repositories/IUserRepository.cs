@@ -10,7 +10,7 @@ namespace BMSAPI.Repositories
     {
         Task< IEnumerable<User>> GetAllAsync();
 
-        Task<User> GetSync(int id);
+        Task<User> GetAsync(int id);
 
         Task<User> AddAsync(User user);
 

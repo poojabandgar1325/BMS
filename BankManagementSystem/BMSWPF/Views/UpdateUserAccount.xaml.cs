@@ -60,6 +60,20 @@ namespace BMSWPF.Views
             MessageBox.Show(this, message, "Message", MessageBoxButton.OK);
             DialogResult = true;
             }
+
+        private void Logout_Click(object sender, RoutedEventArgs e)
+        {
+            Login obj = new Login();
+            obj.Show();
+            Close();
         }
+
+        private void Hyperlink_Click(object sender, RoutedEventArgs e)
+        {
+            UserDashboard obj = new UserDashboard();
+            obj.Show();
+            Close();
+        }
+    }
     }
 

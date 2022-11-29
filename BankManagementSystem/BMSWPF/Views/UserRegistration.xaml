@@ -30,6 +30,8 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
 
         <TextBlock Text=" User Registration"
@@ -143,7 +145,7 @@
                  />
 
         <Button Name="btnAdd"
-                Content="ADD"
+                Content="SAVE"
                 Grid.Row="12"
                 Grid.Column="1"
                 FontWeight="Bold" Margin="5,8,8,0"
@@ -151,23 +153,9 @@
                 Background="Green"
                 Click="btnAdd_Click"
                 />
-        <Button Name="btnShow"
-                Content="Show"
-                Grid.Row="13"
-                Grid.Column="1"
-                FontWeight="Bold" Margin="5,8,8,0"
-                Padding="3"
-                Background="SkyBlue"
-                Click="btnShow_Click"
-                />
-        <Button Name="btnUpdate"
-                Content="Update"
-                Grid.Row="14"
-                Grid.Column="1"
-                FontWeight="Bold" Margin="5,8,8,0"
-                Padding="3"
-                Background="LightPink"
-                Click="btnUpdate_Click"
-                />
+
+        <TextBlock Grid.Row="15" Grid.Column="1" HorizontalAlignment="Right">  
+                 <Hyperlink   FontSize="14" FontStyle="Normal" Click="Hyperlink_Click" >Back to Login</Hyperlink>
+        </TextBlock>
     </Grid>
 </Window>

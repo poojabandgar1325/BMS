@@ -59,25 +59,14 @@ namespace BMSWPF.Views
                 HttpResponseMessage rsp = client.PostAsJsonAsync("https://localhost:5001/Users/", user).Result;
                
             }
-
-
-        }
-
-        private void btnShow_Click(object sender, RoutedEventArgs e)
-        {
-            LoanData obj = new LoanData();
-
-            obj.Show();
-           // obj.Close();
-        }
-
-        private void btnUpdate_Click(object sender, RoutedEventArgs e)
-        {
-            UpdateUserAccount obj = new UpdateUserAccount();
-
-            obj.Show();
-          //  obj.Close();
             
+        }
+
+        private void Hyperlink_Click(object sender, RoutedEventArgs e)
+        {
+            Login obj = new Login();
+            obj.Show();
+            Close();
         }
     }
 }

@@ -30,11 +30,13 @@ namespace BMSAPI.Repositories
             return await bMSDbContext.Users.ToListAsync();
         }
 
-        public async Task<User> GetSync(int id)
+        public async Task<User> GetAsync(int id)
         {
             return await bMSDbContext.Users.FirstOrDefaultAsync(x => x.AccountNo == id);
             
         }
+
+       
 
         public async Task<User> UpdateAsync(int id, User user)
         {

@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BMSAPI", "BMSAPI\BMSAPI.csproj", "{9FE963E9-8D4F-457C-A94D-13D0272E8D6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BMSWPF", "BMSWPF\BMSWPF.csproj", "{44A9B4D2-6D23-4D52-9119-9ED018935FB1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BMSWPF", "BMSWPF\BMSWPF.csproj", "{44A9B4D2-6D23-4D52-9119-9ED018935FB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BMSWPF1", "BMSWPF1\BMSWPF1.csproj", "{FB7C8B79-E3EE-4E5B-AC79-E3DF754CD562}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{44A9B4D2-6D23-4D52-9119-9ED018935FB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{44A9B4D2-6D23-4D52-9119-9ED018935FB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{44A9B4D2-6D23-4D52-9119-9ED018935FB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB7C8B79-E3EE-4E5B-AC79-E3DF754CD562}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB7C8B79-E3EE-4E5B-AC79-E3DF754CD562}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB7C8B79-E3EE-4E5B-AC79-E3DF754CD562}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB7C8B79-E3EE-4E5B-AC79-E3DF754CD562}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -47,7 +47,7 @@ namespace BMSAPI.Controllers
         [ActionName("GetUserAsync")]
         public async Task<IActionResult> GetUserAsync(int accountNo)
         {
-           var user= await userRepository.GetSync(accountNo);
+           var user= await userRepository.GetAsync(accountNo);
 
             if(user == null)
             {

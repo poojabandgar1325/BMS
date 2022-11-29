@@ -1,6 +1,8 @@
 ﻿using BMSWPF.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -30,43 +32,57 @@ namespace BMSWPF.Views
         UserRegistration registration = new UserRegistration();
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            if (textBox2.Text != "" && wordBox1.word != "")
+
+            if (txtUsername.Text.Length == 0)
             {
-                DBconnection objconn = new DBconnection();
-                objconn.connection(); //calling connection   
-
-                SqlCommand com = new SqlCommand("user_Sp_Login", objconn.con);
-                com.CommandType = CommandType.StoredProcedure;
-                com.Parameters.AddWithValue("@UserId", textBox2.Text);
-                com.Parameters.AddWithValue("@word", wordBox1.word);
-
-                int IsValidUser = Convert.ToInt32(com.ExecuteScalar());
-                if (IsValidUser == 1) //if user found it returns 1  
-                {
-                    Landing obj = new Landing();
-
-                    MainWindow objmain = new MainWindow();
-                    obj.Show(); //after login Redirect to second window  
-                    objmain.Hide();//after login hide the  Login window  
-
-
-                }
-                else
-                {
-
-                    MessageBox.Show("InValid UserId Or word");
-
-                }
+                errormessage.Text = "Enter an Username.";
+                txtUsername.Focus();
             }
             else
             {
-
-                MessageBox.Show("UserId and word Is Required");
-
+                string username = txtUsername.Text;
+                string password = passwordBox1.Password;
+              
+               
+                   //SqlConnection con = new SqlConnection("server=DOT-111417154-0;database=BMSDB;User Id=sa;password=pass@word1;integrated security=False;");
+                     //con.Open();
+                    // SqlCommand cmd = new SqlCommand("Select * from Users where Username='" + username + "'  and Password='" + password + "'", con);
+                   ////  cmd.CommandType = CommandType.Text;
+                     //SqlDataAdapter adapter = new SqlDataAdapter();
+                    // adapter.SelectCommand = cmd;
+                    // DataSet dataSet = new DataSet();
+                    // adapter.Fill(dataSet);
+                     //if (dataSet.Tables[0].Rows.Count > 0)
+                     if(username == "Pooja13")
+                     {
+                         // string username = dataSet.Tables[0].Rows[0]["FirstName"].ToString() + " " + dataSet.Tables[0].Rows[0]["LastName"].ToString();
+                         // welcome.TextBlockName.Text = username;//Sending value from one form to another form.  
+                         UserDashboard obj = new UserDashboard();
+                         obj.Show();
+                         Close();
+                    }
+                     else if (username == "Pooja")
+                {
+                    LoanData obj = new LoanData();
+                    obj.Show();
+                    Close();
+                }
+                
+                else
+                {
+                    errormessage.Text = "Sorry! Please enter existing username/password.";
+                }
+               // con.Close();
             }
-        
-        
 
+        }
+
+        private void Hyperlink_Click(object sender, RoutedEventArgs e)
+        {
+            UserRegistration obj = new UserRegistration();
+            obj.Show();
+            Close();
+           
         }
     }
 }
